@@ -1,0 +1,55 @@
+.titulo {
+  width: 50%;
+  max-height: 100px;
+  background-color: antiquewhite;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.titulo h1 {
+  color: green;
+}
+
+.main {
+  width: 50%;
+  height: 300px;
+  background-color: antiquewhite;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+  margin: 35px;
+}
+
+.coluna label {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 10px;
+  color: green;
+}
+
+.coluna input {
+  height: 20px;
+  border: none;
+
+}
+
+.coluna button {
+  margin-left: 10px;
+}
+
+small {
+  color: red;
+  margin: 5px auto;
+  background-color: rgba(235, 106, 106, 0.2);
+  height: 20px;
+  line-height: 18px;
+  padding: 2px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,64 @@
+.header {
+  width: 94%;
+  height: 150px;
+  background-color: rgba(250, 235, 215, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px auto;
+  border-radius: 8px;
+}
+
+.header img {
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+
+}
+
+.img1 {
+  margin-left: 15px;
+}
+
+.img2 {
+  margin-right: 15px;
+}
+
+.header a {
+  max-width: 60px;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: green;
+  font-family: sans-serif;
+
+}
+
+.rodape {
+  display: flex;
+  align-self: flex-end;
+  background-color: antiquewhite;
+  width: 94%;
+  height: 100px;
+  margin: 15px auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.rodape h3 {
+  margin: 0px;
+  text-transform: uppercase;
+  color: green;
+}
+
+.rodape p {
+  margin: 0px;
+  font-weight: bold;
+  color: green;
+}
+
+.rodape strong {
+  text-transform: uppercase;
+}

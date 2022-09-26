@@ -1,0 +1,25 @@
+<div class="titulo">
+  <h1 class="title">Entre com sua conta </h1>
+</div>
+
+<main class="main" (submit)="Logar()">
+  <form [formGroup]="formLogin">
+
+    <div id="Login" class="coluna">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email">
+      <small *ngIf="formLogin.controls['email'].hasError('required') && formLogin.touched">Email Obrigatório!</small>
+    </div>
+
+    <div id="Senha" class="coluna">
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" formControlName="senha">
+      <small *ngIf="formLogin.controls['senha'].hasError('required') && formLogin.touched">Senha Obrigatória!</small>
+    </div>
+
+    <div class="coluna">
+      <button type="submit" class="btn">LogIn</button>
+    </div>
+
+  </form>
+</main>

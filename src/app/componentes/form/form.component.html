@@ -1,0 +1,110 @@
+<Div class="titulo">
+  <h1 class="title">Cadastro de Pessoas</h1>
+</Div>
+
+<main class="main">
+  <form [formGroup]="formPessoa">
+
+    <div class="field">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" formControlName="nome" size="20">
+
+      <small *ngIf="formPessoa.controls['nome'].hasError('required') && formPessoa.dirty">Campo
+        Obrigatório!</small>
+      <small *ngIf="formPessoa.controls['nome'].hasError('minlength') &&
+      formPessoa.dirty">Precisa ter mais que 3 caracteres!</small>
+      <small *ngIf="formPessoa.controls['nome'].hasError('maxlength') && formPessoa.dirty">Máximo de 18
+        caracteres!</small>
+      <small *ngIf="formPessoa.controls['nome'].hasError('pattern') && formPessoa.dirty">Escreva um nome válido!</small>
+    </div>
+
+
+    <div class="field">
+      <label for="sobrenome">Sobrenome</label>
+      <input type="text" id="sobrenome" formControlName="sobrenome">
+
+      <small *ngIf="formPessoa.controls['sobrenome'].hasError('required') && formPessoa.dirty">Campo
+        Obrigatório!</small>
+      <small *ngIf="formPessoa.controls['sobrenome'].hasError('minlength') &&
+      formPessoa.dirty">Precisa ter mais que 15 caracteres!</small>
+      <small *ngIf="formPessoa.controls['sobrenome'].hasError('maxlength') && formPessoa.dirty">Máximo de 60
+        caracteres!</small>
+      <small *ngIf="formPessoa.controls['sobrenome'].hasError('pattern') && formPessoa.dirty">Escreva um sobrenome
+        válido!</small>
+    </div>
+
+    <div class="field">
+      <label for="idade">Idade</label>
+      <input type="number" id="idade" formControlName="idade">
+
+      <small *ngIf="formPessoa.controls['idade'].hasError('required') && formPessoa.dirty">Campo
+        Obrigatório!</small>
+      <small *ngIf="formPessoa.controls['idade'].hasError('min') && formPessoa.dirty">Idade Inválida!</small>
+      <small *ngIf="formPessoa.controls['idade'].hasError('max') && formPessoa.dirty">Idade máxima atingida!</small>
+    </div>
+
+    <div class="field sexo">
+      <label>Sexo</label>
+      <label class="radio">
+        <input type="radio" formControlName="sexo" value="M">
+        Masculino
+      </label>
+
+      <label class="radio">
+        <input type="radio" formControlName="sexo" value="F">
+        Feminino
+      </label>
+
+    </div>
+
+    <div class="field">
+      <label for="tel">Telefone</label>
+      <input type="tel" id="tel" formControlName="telefone" placeholder="99 99999-9999">
+
+      <small *ngIf="formPessoa.controls['telefone'].hasError('pattern') && formPessoa.dirty">Insira um telefone
+        válido!</small>
+      <small *ngIf="formPessoa.controls['telefone'].hasError('required') && formPessoa.dirty"> Campo
+        Obrigatório!</small>
+    </div>
+
+    <div class="field">
+      <label for="cep">Cep</label>
+      <input type="text" id="cep" maxlength="9" (blur)="buscarCep()" formControlName="cep" placeholder="99999-999">
+      <small *ngIf="formPessoa.controls['cep'].hasError('required') && formPessoa.touched">Campo
+        Obrigatório!</small>
+      <small *ngIf="formPessoa.controls['cep'].hasError('pattern') && formPessoa.dirty">Insira um cep Válido!</small>
+      <small *ngIf="formPessoa.controls['cep'].hasError('maxlength') && formPessoa.dirty">Insira um cep Válido!</small>
+      <small *ngIf="formPessoa.controls['cep'].hasError('minlength') && formPessoa.dirty">Insira um cep Válido!</small>
+
+    </div>
+
+    <div class="field">
+      <label for="logradouro">Logradouro</label>
+      <input type="text" id="logradouro" value="{{endereco.logradouro}}">
+    </div>
+
+    <div class="field">
+      <label for="complemento">Complemento</label>
+      <input type="text" id="complemento" [value]="endereco.complemento">
+    </div>
+
+    <div class="field">
+      <label for="bairro">Bairro</label>
+      <input type="text" id="bairro" [value]="endereco.bairro">
+    </div>
+
+    <div class="field">
+      <label for="localidade">Localidade</label>
+      <input type="text" id="localidade" [value]="endereco.localidade">
+    </div>
+
+    <div class="field">
+      <label for="uf">UF</label>
+      <input type="text" id="uf" [value]="endereco.uf">
+    </div>
+
+    <div class="field">
+      <button type="button" class="btn" (click)="salvarCadastro()">Cadastrar</button>
+    </div>
+  </form>
+</main>
